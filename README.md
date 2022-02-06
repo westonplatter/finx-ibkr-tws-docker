@@ -1,6 +1,4 @@
-# IBKR TWS in Docker
-
-![](screenshot.jpg)
+# Finx IBKR TWS Docker
 
 ## Features
 
@@ -13,10 +11,11 @@
 
 - Install [Docker](https://docs.docker.com/get-docker/)
 - Clone this repo:
-  - `git clone https://github.com/extrange/ibkr-docker.git`
-  - `cd ibkr-docker`
-- Enter your credentials:
-  - Create 2 files named `username.txt` and `password.txt` and input your IBKR username/password accordingly
+  - `git clone https://github.com/westonplatter/finx-ibkr-docker.git`
+  - `cd finx-ibkr-docker`
+- Create env file
+  - `cp env-file-sample env-file-myfile`
+  - add username, password, trade_mode and read_only_login settings
 - Build the image:
   - `docker-compose build`
 - Start the container:
@@ -27,15 +26,10 @@
 
 ## Paper vs Live Account
 
-This container is setup to connect to a paper account. To switch to a live account:
+The the container connects to either a live or paper account based on the IBKR_TRADING_MODE=[live|paper].
 
-- Modify nginx.conf's `proxy_pass` accordingly:
-  - Live Account: `7496`
-  - Paper Account: `7497`
-- Modify `app/config.ini`:
-  - `TradingMode=live`
+The API port is exposed as localhost:8888 in either (live or paper) case.
 
-You will have to restart the container after making these changes.
 
 ## TWS Version Changes
 
@@ -49,11 +43,7 @@ Modify the value of `TWS_MAJOR_VRSN` in `docker-compose.yml` to the latest versi
 AcceptBidAskLastSizeDisplayUpdateNotification=accept
 AcceptIncomingConnectionAction=accept
 AcceptNonBrokerageAccountWarning=yes
-TradingMode=paper
 ```
 
-## Known Issues
-
-- If either of `username.txt` or `password.txt` are missing, Docker [creates empty folders with the same name](https://github.com/docker/compose/issues/5377)
-
-## Todo
+## License
+BSD-3. See LICENSE file

@@ -1,22 +1,14 @@
+version: '3.2'
+
 services:
   ibkr:
-    build:
-      context: ./app
-      args:
-        ibc_version: 3.12.0
+    image: finx-ibkr-tws-docker:latest
+    env_file:
+      - env-file-${IBKR_TRADING_MODE:-paper}
     ports:
       - "127.0.0.1:6080:6080"
       - "127.0.0.1:8888:8888"
     restart: unless-stopped
-    secrets:
-      - ibkr_username
-      - ibkr_password
     stop_signal: SIGKILL
     environment:
       TWS_MAJOR_VRSN: 1012
-
-secrets:
-  ibkr_username:
-    file: ./username.txt
-  ibkr_password:
-    file: ./password.txt

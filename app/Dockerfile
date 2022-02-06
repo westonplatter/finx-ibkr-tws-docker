@@ -32,7 +32,7 @@ RUN git clone https://github.com/novnc/noVNC.git && \
 
 # Copy config files over
 COPY config.ini twsstart.sh /opt/ibc/
-COPY start.sh nginx.conf ./
+COPY start.sh nginx-live.conf nginx-paper.conf ./
 
 # Set permissions
 RUN chmod +x *.sh /opt/ibc/*.sh /opt/ibc/*/*.sh

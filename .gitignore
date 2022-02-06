@@ -2,3 +2,6 @@
 .password
 username.txt
 password.txt
+
+env-file*
+!env-file-sample
