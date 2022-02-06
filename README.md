@@ -45,5 +45,8 @@ AcceptIncomingConnectionAction=accept
 AcceptNonBrokerageAccountWarning=yes
 ```
 
+## Credit
+Forked and renamed from Nicholas' work, https://github.com/extrange/ibkr-docker.
+
 ## License
 BSD-3. See LICENSE file
