@@ -1,7 +1,8 @@
 # Finx IBKR TWS Docker
+Simple approach to running Trader Work Station in Docker, both `live` and `paper`.
+
 
 ## Features
-
 - **Fully containerized** IBKR TWS instance + [IBC Alpha](https://github.com/IbcAlpha) in Docker, no external dependencies
 - **TWS API access** (automatically configured), proxied to localhost internally via `nginx`
 - **Supports noVNC** (a browser-based VNC client, proxied via Websockify)
@@ -46,7 +47,8 @@ AcceptNonBrokerageAccountWarning=yes
 ```
 
 ## Credit
-Forked and renamed from Nicholas' work, https://github.com/extrange/ibkr-docker.
+Forked and renamed from Nicholas' excellent work, https://github.com/extrange/ibkr-docker.
 
 ## License
 BSD-3. See LICENSE file
+

@@ -1,5 +1,3 @@
-
-
 up:
 	IBKR_TRADING_MODE=paper docker-compose up
 
