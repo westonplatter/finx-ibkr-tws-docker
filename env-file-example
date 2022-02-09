@@ -1,0 +1,8 @@
+IBKR_USERNAME=myusername
+IBKR_PASSWORD=mypassword
+
+# values = live OR paper
+IBKR_TRADING_MODE=live
+
+# values = yes OR no
+IBKR_READ_ONLY_LOGIN=yes
